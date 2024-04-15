@@ -1,10 +1,14 @@
 import Banner from "./banner";
+import HouseList from "./houseList";
 
 const App = () => {
   return (
-    <div>
-      <Banner> Providing houses all over the world </Banner>
-    </div>
+    <>
+      <Banner> 
+        <div>Providing houses all over the world</div>
+      </Banner>
+      <HouseList />
+    </>
   );
   
 };
