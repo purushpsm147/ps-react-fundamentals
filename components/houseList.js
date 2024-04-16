@@ -4,6 +4,7 @@ import HouseRow from "./houseRow";
 const HouseList = () => {
 
   const [houses, setHouses] = useState([]);
+  const counter = useRef(0);
 
   useEffect(() => {
     const fetchHouses = async () => {
@@ -13,6 +14,7 @@ const HouseList = () => {
       //we are struck in infinite loop. Use Dependency array to avoid this.
     };
     fetchHouses();
+    counter.current++;
 
   }, []);
 
