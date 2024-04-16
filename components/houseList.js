@@ -23,7 +23,9 @@ const housesArray = [
 
     const [houses, setHouses] = useState(housesArray);
     const [counter, setCounter] = useState(0);
-    setCounter(current => counter + 1);
+    const setCounterValue = () => {
+      setCounter(counter + 1);
+    };
 
     const addHouse = () => {
         setHouses([...houses, {
