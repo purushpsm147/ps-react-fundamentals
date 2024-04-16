@@ -2,15 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import HouseRow from "./houseRow";
 
 const HouseList = () => {
+
   const [houses, setHouses] = useState([]);
 
   useEffect(() => {
     const fetchHouses = async () => {
       const response = await fetch("/api/houses");
       const houses = await response.json();
-      setHouses(houses);
+      setHouses(houses); // state changes, func houselist will be re executed
+      //we are struck in infinite loop. Use Dependency array to avoid this.
     };
     fetchHouses();
+
   }, []);
 
   const addHouse = () => {
